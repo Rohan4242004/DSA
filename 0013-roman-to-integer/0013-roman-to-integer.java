@@ -9,9 +9,9 @@ class Solution {
         hm.put('D', 500);
         hm.put('M', 1000);
 
-        int result = hm.get(s.charAt(s.length() - 1));
+        int result = hm.get(s.charAt(s.length() - 1)); ///We start from the rightmost Roman numeral because it makes the subtraction logic easy.
 
-        for (int i = s.length() - 2; i >= 0; i--) {
+        for (int i = s.length() - 2; i >= 0; i--) {  ///We start from the second-last character because the last character has already been added to result.
             if (hm.get(s.charAt(i)) < hm.get(s.charAt(i + 1))) {
                 result =result - hm.get(s.charAt(i));
             } else {
